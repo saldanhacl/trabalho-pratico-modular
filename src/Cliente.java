@@ -21,7 +21,7 @@ public class Cliente {
         setIdade(idade);
         setRG(RG);
         setSexo(sexo);
-    }s
+    }
 
     public String getNome() {
         return nome;

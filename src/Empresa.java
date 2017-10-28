@@ -7,15 +7,36 @@ public class Empresa {
 
     Scanner in = new Scanner(System.in);
     private String nomeDaEmpresa;
-    private String cnhDaEmpresa;
+    private String cnpjDaEmpresa;
     private List<Vendedor> vendedoresCadastrados = new ArrayList<>();
     private List<Produto> produtosCadastrados = new ArrayList<>();
     private List<Cliente> clientesCadastrados = new ArrayList<>();
     private List<Agenda> listaDeVisitas = new ArrayList<>();
 
-    public Empresa(String nomeDaEmpresa, String cnhDaEmpresa) {
+    public Empresa(String nomeDaEmpresa, String cnpjDaEmpresa) {
         this.nomeDaEmpresa = nomeDaEmpresa;
-        this.cnhDaEmpresa = cnhDaEmpresa;
+        this.cnpjDaEmpresa = cnpjDaEmpresa;
+    }
+
+    public void cadastrarVendedor(Vendedor v){
+        if (!vendedoresCadastrados.contains(v)){
+            vendedoresCadastrados.add(v);
+            System.out.println("Vendedor " + v + " cadastrado com sucesso!");
+        } else System.out.println("Vendedor já cadastrado");
+    }
+
+    public void cadastrarCliente(Cliente c){
+        if (!clientesCadastrados.contains(c)){
+            clientesCadastrados.add(c);
+            System.out.println("Cliente " + c + " cadastrado com sucesso!");
+        } else System.out.println("Cliente já cadastrado");
+    }
+
+    public void cadastrarProduto(Produto p){
+        if (!produtosCadastrados.contains(p)){
+            produtosCadastrados.add(p);
+            System.out.println("Produto " + p + " cadastrado com sucesso!");
+        } else System.out.println("Produto já cadastrado");
     }
 
     public void mostrarVendedores(){
@@ -71,11 +92,11 @@ public class Empresa {
     }
 
     public String getCnhDaEmpresa() {
-        return cnhDaEmpresa;
+        return cnpjDaEmpresa;
     }
 
     public void setCnhDaEmpresa(String cnhDaEmpresa) {
-        this.cnhDaEmpresa = cnhDaEmpresa;
+        this.cnpjDaEmpresa = cnhDaEmpresa;
     }
 
     public List<Vendedor> getVendedoresCadastrados() {

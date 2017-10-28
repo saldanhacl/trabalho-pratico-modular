@@ -1,19 +1,55 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Empresa {
 
+    Scanner in = new Scanner(System.in);
     private String nomeDaEmpresa;
     private String cnhDaEmpresa;
     private List<Vendedor> vendedoresCadastrados = new ArrayList<>();
     private List<Produto> produtosCadastrados = new ArrayList<>();
     private List<Cliente> clientesCadastrados = new ArrayList<>();
+    private List<Agenda> listaDeVisitas = new ArrayList<>();
 
     public Empresa(String nomeDaEmpresa, String cnhDaEmpresa) {
         this.nomeDaEmpresa = nomeDaEmpresa;
         this.cnhDaEmpresa = cnhDaEmpresa;
     }
 
+    public void mostrarVendedores(){
+        System.out.println("------- VENDEDORES --------\n");
+        for (Vendedor v : vendedoresCadastrados) {
+            System.out.println("ID #" + vendedoresCadastrados.indexOf(v));
+            System.out.println("Nome: " + v.getNome() + " "  +  v.getSobrenome());
+            System.out.println("CPF: " + v.getCPF());
+            System.out.println("RG: " + v.getRG());
+            System.out.println("Sexo: " + v.getSexo());
+            System.out.println("Telefone:" +  v.getTelefone());
+        }
+    }
+
+    public void mostrarClientes(){
+        System.out.println("------- CLIENTES --------\n");
+        for (Cliente c : clientesCadastrados) {
+            System.out.println("ID #" + clientesCadastrados.indexOf(c));
+            System.out.println("Nome: " + c.getNome() + " "  +  c.getSobrenome());
+            System.out.println("CPF: " + c.getCPF());
+            System.out.println("Sexo: " + c.getSexo());
+            System.out.println("Telefone:" +  c.getTelefone());
+        }
+    }
+
+    public void mostrarProtudos(){
+        System.out.println("------- PRODUTOS --------\n");
+        for (Produto p : produtosCadastrados) {
+            System.out.println("ID #" + produtosCadastrados.indexOf(p));
+            System.out.println("Produto: " + p.getNomeDoProduto());
+            System.out.println("Preço: " + p.getPrecoUnitario());
+            System.out.println("Quantidade: " + p.getQuantidadeProduto());
+        }
+    }
 
     public String getNomeDaEmpresa() {
         return nomeDaEmpresa;

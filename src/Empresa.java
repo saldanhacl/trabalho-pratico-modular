@@ -51,6 +51,17 @@ public class Empresa {
         }
     }
 
+    public void visitasAgendadas() {
+        System.out.println("------- VISITAS --------\n");
+        for (Agenda a : listaDeVisitas) {
+            System.out.println("ID #" + listaDeVisitas.indexOf(a));
+            System.out.println("Data da visita: " + a.getDataDaVisita());
+            System.out.println("Vendedor: " + a.getVendedorVisitante());
+            System.out.println("Cliente: " + a.getClienteVisitado());
+            System.out.println("Produto: " + a.getProdutoVendido());
+        }
+    }
+
     public String getNomeDaEmpresa() {
         return nomeDaEmpresa;
     }

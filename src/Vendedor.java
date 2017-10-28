@@ -65,6 +65,9 @@ public class Vendedor {
         this.sexo = sexo;
     }
 
-
+    @Override
+    public String toString() {
+        return nome + " " + sobrenome;
+    }
 }
 

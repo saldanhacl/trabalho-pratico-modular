@@ -1,18 +1,17 @@
 public class Vendedor {
     private String nome;
+    private String sobrenome;
     private String telefone;
-    private String cidade;
     private String RG;
     private String CPF;
     private String sexo;
-    private Agenda agenda;
 
     public Vendedor(){}
 
-    public Vendedor(String nome, String telefone, String cidade, String RG, String CPF, String sexo) {
-        setCidade(cidade);
+    public Vendedor(String nome, String sobrenome, String telefone, String RG, String CPF, String sexo) {
         setCPF(CPF);
         setNome(nome);
+        setSobrenome(sobrenome);
         setRG(RG);
         setSexo(sexo);
         setTelefone(telefone);
@@ -26,20 +25,20 @@ public class Vendedor {
         this.nome = nome;
     }
 
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
     public String getTelefone() {
         return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
     }
 
     public String getRG() {
@@ -66,12 +65,6 @@ public class Vendedor {
         this.sexo = sexo;
     }
 
-    public Agenda getAgenda() {
-        return agenda;
-    }
 
-    public void setAgenda(Agenda agenda) {
-        this.agenda = agenda;
-    }
 }
 

@@ -1,54 +1,33 @@
 public class Cliente {
 
     private String nome;
+    private String sobrenome;
     private String telefone;
     private int idade;
     private String CPF;
     private String sexo;
-    private String cidade;
-    private String estado;
-    private String RG;
-
 
     public Cliente(){}
 
-    public Cliente(String nome, String telefone, int idade, String CPF, String sexo, String cidade, String estado, String RG) {
+    public Cliente(String nome, String telefone, int idade, String CPF, String sexo, String sobrenome) {
         setNome(nome);
         setTelefone(telefone);
-        setCidade(ciadade);
         setCPF(CPF);
-        setEstado(estado);
         setIdade(idade);
-        setRG(RG);
         setSexo(sexo);
+        setSobrenome(sobrenome);
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public String getRG() {
-        return RG;
-    }
-
-    public void setRG(String RG) {
-        this.RG = RG;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public void setNome(String nome) {

@@ -40,7 +40,7 @@ public class Empresa {
     }
 
     public void mostrarVendedores(){
-        System.out.println("------- VENDEDORES --------\n");
+        System.out.println("\n------- VENDEDORES --------\n");
         for (Vendedor v : vendedoresCadastrados) {
             System.out.println("ID #" + vendedoresCadastrados.indexOf(v));
             System.out.println("Nome: " + v.getNome() + " "  +  v.getSobrenome());
@@ -52,7 +52,7 @@ public class Empresa {
     }
 
     public void mostrarClientes(){
-        System.out.println("------- CLIENTES --------\n");
+        System.out.println("\n------- CLIENTES --------\n");
         for (Cliente c : clientesCadastrados) {
             System.out.println("ID #" + clientesCadastrados.indexOf(c));
             System.out.println("Nome: " + c.getNome() + " "  +  c.getSobrenome());
@@ -62,8 +62,8 @@ public class Empresa {
         }
     }
 
-    public void mostrarProtudos(){
-        System.out.println("------- PRODUTOS --------\n");
+    public void mostrarProdutos(){
+        System.out.println("\n------- PRODUTOS --------\n");
         for (Produto p : produtosCadastrados) {
             System.out.println("ID #" + produtosCadastrados.indexOf(p));
             System.out.println("Produto: " + p.getNomeDoProduto());

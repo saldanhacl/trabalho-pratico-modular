@@ -5,7 +5,10 @@ public class Visita {
     private Produto produtoVendido;
     private String dataDaVisita;
 
-    public Visita(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido,String dataDaVisita) {
+    public Visita() {
+    }
+
+    public Visita(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido, String dataDaVisita) {
         this.vendedorVisitante = vendedorVisitante;
         this.clienteVisitado = clienteVisitado;
         this.produtoVendido = produtoVendido;

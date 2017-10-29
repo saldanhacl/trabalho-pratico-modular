@@ -11,6 +11,9 @@ public class Empresa {
     private List<Produto> produtosCadastrados = new ArrayList<>();
     private List<Cliente> clientesCadastrados = new ArrayList<>();
 
+    public Empresa(){
+    }
+
     public Empresa(String nomeDaEmpresa, String cnpjDaEmpresa) {
         this.nomeDaEmpresa = nomeDaEmpresa;
         this.cnpjDaEmpresa = cnpjDaEmpresa;

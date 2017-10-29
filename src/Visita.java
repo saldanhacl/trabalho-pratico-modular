@@ -1,11 +1,11 @@
-public class Agenda {
+public class Visita {
 
     private Vendedor vendedorVisitante;
     private Cliente clienteVisitado;
     private Produto produtoVendido;
     private String dataDaVisita;
 
-    public Agenda(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido,String dataDaVisita) {
+    public Visita(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido,String dataDaVisita) {
         this.vendedorVisitante = vendedorVisitante;
         this.clienteVisitado = clienteVisitado;
         this.produtoVendido = produtoVendido;

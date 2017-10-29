@@ -10,7 +10,7 @@ public class Empresa {
     private List<Vendedor> vendedoresCadastrados = new ArrayList<>();
     private List<Produto> produtosCadastrados = new ArrayList<>();
     private List<Cliente> clientesCadastrados = new ArrayList<>();
-    private List<Agenda> listaDeVisitas = new ArrayList<>();
+    private List<Visita> listaDeVisitas = new ArrayList<>();
 
     public Empresa(String nomeDaEmpresa, String cnpjDaEmpresa) {
         this.nomeDaEmpresa = nomeDaEmpresa;

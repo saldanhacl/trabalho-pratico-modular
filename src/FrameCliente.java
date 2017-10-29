@@ -20,17 +20,17 @@ public class FrameCliente extends JFrame {
 	private JLabel texto2;
 
 	public FrameCliente() {
-		super("Cliente");
+		super("Agendamento");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Container cPane = this.getContentPane();
 		
 		cPane.setLayout(new FlowLayout());
 		
-		texto = new JLabel("Nome:");
+		texto = new JLabel("Vendedor: ");
 		campo = new JTextField(15);
 		butOK = new JButton("OK");
 		
-		texto2 = new JLabel("Data:");
+		texto2 = new JLabel("Data: ");
 		campo2 = new JTextField(15);
 		
 		cPane.add(texto);
@@ -45,7 +45,7 @@ public class FrameCliente extends JFrame {
 	class ButOkEvent implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {			
-	    	   JOptionPane.showMessageDialog(null, "Agendado por: " + campo.getText() + "\n" + "Na data:" + campo2.getText() , "Agendamento", JOptionPane.PLAIN_MESSAGE);
+	    	   JOptionPane.showMessageDialog(null, "Vendedor: " + campo.getText() + "\n" + "Data: " + campo2.getText() , "Agendamento", JOptionPane.PLAIN_MESSAGE);
 	}
   }
 }

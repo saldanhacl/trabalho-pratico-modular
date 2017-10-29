@@ -15,6 +15,7 @@ public class Aplicacao {
         pp.mostrarVendedores();
 
         pp.agendarVisita();
+        pp.visitasAgendadas();
 
     }
 

@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -6,6 +7,7 @@ import java.util.Scanner;
 public class Empresa {
 
     Scanner in = new Scanner(System.in);
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy HH:mm");
     private String nomeDaEmpresa;
     private String cnpjDaEmpresa;
     private List<Vendedor> vendedoresCadastrados = new ArrayList<>();
@@ -91,7 +93,7 @@ public class Empresa {
         System.out.println("------- VISITAS --------\n");
         for (Agenda a : listaDeVisitas) {
             System.out.println("ID #" + listaDeVisitas.indexOf(a));
-            System.out.println("Data da visita: " + a.getDataDaVisita());
+            System.out.println("Data da visita: " + dateFormat.format(a.getDataDaVisita()));
             System.out.println("Vendedor: " + a.getVendedorVisitante());
             System.out.println("Cliente: " + a.getClienteVisitado());
             System.out.println("Produto: " + a.getProdutoVendido());

@@ -1,10 +1,12 @@
 public class Vendedor {
+
     private String nome;
     private String sobrenome;
     private String telefone;
     private String RG;
     private String CPF;
     private String sexo;
+    private Agenda agenda;
 
     public Vendedor(){}
 
@@ -15,6 +17,15 @@ public class Vendedor {
         setRG(RG);
         setSexo(sexo);
         setTelefone(telefone);
+        agenda = new Agenda();
+    }
+
+    public Agenda getAgenda() {
+        return agenda;
+    }
+
+    public void setAgenda(Agenda agenda) {
+        this.agenda = agenda;
     }
 
     public String getNome() {

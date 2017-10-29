@@ -15,7 +15,7 @@ public class Aplicacao {
         pp.mostrarVendedores();
 
         pp.agendarVisita();
-        pp.visitasAgendadas();
+        pp.getVendedoresCadastrados().get(0).getAgenda().visitasAgendadas();
 
     }
 

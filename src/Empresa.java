@@ -10,7 +10,6 @@ public class Empresa {
     private List<Vendedor> vendedoresCadastrados = new ArrayList<>();
     private List<Produto> produtosCadastrados = new ArrayList<>();
     private List<Cliente> clientesCadastrados = new ArrayList<>();
-    private List<Visita> listaDeVisitas = new ArrayList<>();
 
     public Empresa(String nomeDaEmpresa, String cnpjDaEmpresa) {
         this.nomeDaEmpresa = nomeDaEmpresa;
@@ -29,9 +28,9 @@ public class Empresa {
         String dataVisita = in.next();
         System.out.println("Digite a hora da visita (hh:mm): ");
         String horaVisita = in.next();
-        Agenda a = new Agenda(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
+        Visita v = new Visita(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
                             produtosCadastrados.get(produtoID),dataVisita + " " + horaVisita);
-        listaDeVisitas.add(a);
+        vendedoresCadastrados.get(vendedorID).getAgenda().getVisitas().add(v);
         System.out.println("\nVisita maracada com sucesso!\n");
 
     }
@@ -90,16 +89,6 @@ public class Empresa {
         }
     }
 
-    public void visitasAgendadas() {
-        System.out.println("------- VISITAS --------\n");
-        for (Agenda a : listaDeVisitas) {
-            System.out.println("ID #" + listaDeVisitas.indexOf(a));
-            System.out.println("Data da visita: " + a.getDataDaVisita());
-            System.out.println("Vendedor: " + a.getVendedorVisitante());
-            System.out.println("Cliente: " + a.getClienteVisitado());
-            System.out.println("Produto: " + a.getProdutoVendido());
-        }
-    }
 
     public String getNomeDaEmpresa() {
         return nomeDaEmpresa;

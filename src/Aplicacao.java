@@ -14,6 +14,7 @@ public class Aplicacao {
         pp.mostrarProdutos();
         pp.mostrarVendedores();
 
+        pp.agendarVisita();
 
     }
 

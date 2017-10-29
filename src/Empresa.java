@@ -18,6 +18,21 @@ public class Empresa {
         this.cnpjDaEmpresa = cnpjDaEmpresa;
     }
 
+    public void agendarVisita(){
+        System.out.println("\n------- AGENDAMENTO DE VISITAS --------\n");
+        System.out.print("Digite o ID do vendedor: ");
+        int vendedorID = in.nextInt();
+        System.out.print("Digite o ID do cliente: ");
+        int clienteID = in.nextInt();
+        System.out.print("Digite o ID do produto: ");
+        int produtoID = in.nextInt();
+        Agenda a = new Agenda(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
+                            produtosCadastrados.get(produtoID),new Date());
+        listaDeVisitas.add(a);
+        System.out.println("\nVisita maracada com sucesso!\n");
+
+    }
+
     public void cadastrarVendedor(Vendedor v){
         if (!vendedoresCadastrados.contains(v)){
             vendedoresCadastrados.add(v);

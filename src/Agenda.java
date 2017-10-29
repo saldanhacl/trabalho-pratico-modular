@@ -1,13 +1,11 @@
-import java.util.Date;
-
 public class Agenda {
 
     private Vendedor vendedorVisitante;
     private Cliente clienteVisitado;
     private Produto produtoVendido;
-    private Date dataDaVisita;
+    private String dataDaVisita;
 
-    public Agenda(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido, Date dataDaVisita) {
+    public Agenda(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido,String dataDaVisita) {
         this.vendedorVisitante = vendedorVisitante;
         this.clienteVisitado = clienteVisitado;
         this.produtoVendido = produtoVendido;
@@ -38,11 +36,11 @@ public class Agenda {
         this.produtoVendido = produtoVendido;
     }
 
-    public Date getDataDaVisita() {
+    public String getDataDaVisita() {
         return dataDaVisita;
     }
 
-    public void setDataDaVisita(Date dataDaVisita) {
+    public void setDataDaVisita(String dataDaVisita) {
         this.dataDaVisita = dataDaVisita;
     }
 }

@@ -1,13 +1,10 @@
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Empresa {
 
     Scanner in = new Scanner(System.in);
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy HH:mm");
     private String nomeDaEmpresa;
     private String cnpjDaEmpresa;
     private List<Vendedor> vendedoresCadastrados = new ArrayList<>();
@@ -28,8 +25,12 @@ public class Empresa {
         int clienteID = in.nextInt();
         System.out.print("Digite o ID do produto: ");
         int produtoID = in.nextInt();
+        System.out.println("Digite a data da visita (dd/mm/aaa): ");
+        String dataVisita = in.next();
+        System.out.println("Digite a hora da visita (hh:mm): ");
+        String horaVisita = in.next();
         Agenda a = new Agenda(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
-                            produtosCadastrados.get(produtoID),new Date());
+                            produtosCadastrados.get(produtoID),dataVisita + " " + horaVisita);
         listaDeVisitas.add(a);
         System.out.println("\nVisita maracada com sucesso!\n");
 
@@ -93,7 +94,7 @@ public class Empresa {
         System.out.println("------- VISITAS --------\n");
         for (Agenda a : listaDeVisitas) {
             System.out.println("ID #" + listaDeVisitas.indexOf(a));
-            System.out.println("Data da visita: " + dateFormat.format(a.getDataDaVisita()));
+            System.out.println("Data da visita: " + a.getDataDaVisita());
             System.out.println("Vendedor: " + a.getVendedorVisitante());
             System.out.println("Cliente: " + a.getClienteVisitado());
             System.out.println("Produto: " + a.getProdutoVendido());

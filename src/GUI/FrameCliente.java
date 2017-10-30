@@ -34,7 +34,7 @@ public class FrameCliente extends JFrame {
 		
 		cPane.setLayout(new FlowLayout());
 		
-		vendedor = new JLabel("Implementacao.Vendedor: ");
+		vendedor = new JLabel("Vendedor: ");
 		cPane.add(vendedor);
 
 		JComboBox<Vendedor> vendedores = new JComboBox<>();
@@ -44,7 +44,7 @@ public class FrameCliente extends JFrame {
 		cPane.add(vendedores);
 		
 
-		cliente = new JLabel("Implementacao.Cliente: ");
+		cliente = new JLabel("Cliente: ");
 		cPane.add(cliente);
 
 		JComboBox<Cliente> clientes = new JComboBox<>();
@@ -53,7 +53,7 @@ public class FrameCliente extends JFrame {
 		}
 		cPane.add(clientes);
 		
-		produto = new JLabel("Implementacao.Produto: ");
+		produto = new JLabel("Produto: ");
 		cPane.add(produto);
 		JComboBox<Produto> produtos = new JComboBox<>();
 		for (Produto p: e.getProdutosCadastrados()) {

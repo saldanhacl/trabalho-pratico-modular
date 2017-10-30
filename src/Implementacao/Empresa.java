@@ -45,28 +45,28 @@ public class Empresa {
         Visita v = new Visita(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
                             produtosCadastrados.get(produtoID),dataVisita,horaVisita);
         vendedoresCadastrados.get(vendedorID).getAgenda().getVisitas().add(v);
-        System.out.println("\nImplementacao.Visita maracada com sucesso!\n");
+        System.out.println("\nVisita maracada com sucesso!\n");
 
     }
 
     public void cadastrarVendedor(Vendedor v) throws ExcecaoVendedorCadastrado{
         if (!vendedoresCadastrados.contains(v)){
             vendedoresCadastrados.add(v);
-            System.out.println("Implementacao.Vendedor " + v + " cadastrado com sucesso!");
+            System.out.println("Vendedor " + v + " cadastrado com sucesso!");
         } else throw new ExcecaoVendedorCadastrado();
     }
 
     public void cadastrarCliente(Cliente c) throws ExcecaoClienteCadastrado{
         if (!clientesCadastrados.contains(c)){
             clientesCadastrados.add(c);
-            System.out.println("Implementacao.Cliente " + c + " cadastrado com sucesso!");
+            System.out.println("Cliente " + c + " cadastrado com sucesso!");
         } else throw new ExcecaoClienteCadastrado();
     }
 
     public void cadastrarProduto(Produto p) throws ExcecaoProdutoCadastrado{
         if (!produtosCadastrados.contains(p)){
             produtosCadastrados.add(p);
-            System.out.println("Implementacao.Produto " + p + " cadastrado com sucesso!");
+            System.out.println("Produto " + p + " cadastrado com sucesso!");
         } else throw new ExcecaoProdutoCadastrado();
     }
 
@@ -97,7 +97,7 @@ public class Empresa {
         System.out.println("\n------- PRODUTOS --------\n");
         for (Produto p : produtosCadastrados) {
             System.out.println("ID #" + produtosCadastrados.indexOf(p));
-            System.out.println("Implementacao.Produto: " + p.getNomeDoProduto());
+            System.out.println("Produto: " + p.getNomeDoProduto());
             System.out.println("Preço: " + p.getPrecoUnitario());
             System.out.println("Quantidade: " + p.getQuantidadeProduto());
         }

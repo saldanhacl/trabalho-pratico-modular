@@ -76,7 +76,8 @@ public class FrameCliente extends JFrame {
 		Produto produtoVisita = (Produto) produtos.getSelectedItem();
 
 		//Passar a data por 24/04/1999 e criar campo hora e passar como 14:00
-		//e.agendarVisita(vendedorVisita, clienteVisita, produtoVisita, campo.getText());
+		//Neste estilo - Teste:
+		e.agendarVisita(vendedorVisita, clienteVisita, produtoVisita, "14/09/1999","14:00");
 		
 	}
 

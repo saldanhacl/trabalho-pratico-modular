@@ -48,7 +48,14 @@ public class Visita {
         return dataDaVisita;
     }
 
-   public void addData(String data, String hora){
+    public void setDataDaVisita(GregorianCalendar dataDaVisita) {
+        this.dataDaVisita = dataDaVisita;
+    }
+
+    public boolean addData(String data, String hora){
+        boolean add = false;
+        GregorianCalendar dataADD = new GregorianCalendar();
+
         String[] parteData = data.split("/");
         int dia = Integer.parseInt(parteData[0]);
         int mes = Integer.parseInt(parteData[1]);
@@ -58,6 +65,12 @@ public class Visita {
         int hr = Integer.parseInt(parteHora[0]);
         int min = Integer.parseInt(parteHora[1]);
 
-        this.dataDaVisita.set(ano,mes,dia,hr,min);
+        dataADD.set(ano,mes,dia,hr,min);
+        setDataDaVisita(dataADD);
+
+        if(getDataDaVisita().equals(dataADD))
+            add = true;
+
+        return add;
    }
 }

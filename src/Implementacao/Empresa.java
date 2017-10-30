@@ -1,5 +1,9 @@
 package Implementacao;
 
+import Exececao.ExcecaoClienteCadastrado;
+import Exececao.ExcecaoProdutoCadastrado;
+import Exececao.ExcecaoVendedorCadastrado;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,8 +25,8 @@ public class Empresa {
         this.cnpjDaEmpresa = cnpjDaEmpresa;
     }
 
-    public void agendarVisita(Vendedor v, Cliente c, Produto p, String data){
-        Visita visita = new Visita(v,c,p,data);
+    public void agendarVisita(Vendedor v, Cliente c, Produto p,String data,String hora){
+        Visita visita = new Visita(v,c,p,data,hora);
         v.getAgenda().getVisitas().add(visita);
     }
 
@@ -39,31 +43,31 @@ public class Empresa {
         System.out.println("Digite a hora da visita (hh:mm): ");
         String horaVisita = in.next();
         Visita v = new Visita(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
-                            produtosCadastrados.get(produtoID),dataVisita + " " + horaVisita);
+                            produtosCadastrados.get(produtoID),dataVisita,horaVisita);
         vendedoresCadastrados.get(vendedorID).getAgenda().getVisitas().add(v);
         System.out.println("\nImplementacao.Visita maracada com sucesso!\n");
 
     }
 
-    public void cadastrarVendedor(Vendedor v){
+    public void cadastrarVendedor(Vendedor v) throws ExcecaoVendedorCadastrado{
         if (!vendedoresCadastrados.contains(v)){
             vendedoresCadastrados.add(v);
             System.out.println("Implementacao.Vendedor " + v + " cadastrado com sucesso!");
-        } else System.out.println("Implementacao.Vendedor já cadastrado");
+        } else throw new ExcecaoVendedorCadastrado();
     }
 
-    public void cadastrarCliente(Cliente c){
+    public void cadastrarCliente(Cliente c) throws ExcecaoClienteCadastrado{
         if (!clientesCadastrados.contains(c)){
             clientesCadastrados.add(c);
             System.out.println("Implementacao.Cliente " + c + " cadastrado com sucesso!");
-        } else System.out.println("Implementacao.Cliente já cadastrado");
+        } else throw new ExcecaoClienteCadastrado();
     }
 
-    public void cadastrarProduto(Produto p){
+    public void cadastrarProduto(Produto p) throws ExcecaoProdutoCadastrado{
         if (!produtosCadastrados.contains(p)){
             produtosCadastrados.add(p);
             System.out.println("Implementacao.Produto " + p + " cadastrado com sucesso!");
-        } else System.out.println("Implementacao.Produto já cadastrado");
+        } else throw new ExcecaoProdutoCadastrado();
     }
 
     public void mostrarVendedores(){

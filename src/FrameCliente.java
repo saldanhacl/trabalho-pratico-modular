@@ -23,7 +23,8 @@ public class FrameCliente extends JFrame {
 	public static final String NL = System.getProperty("line.separator");  
 
 
-	public FrameCliente() {
+	public FrameCliente(Empresa e) {
+
 		super("Agendamento");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Container cPane = this.getContentPane();
@@ -32,31 +33,50 @@ public class FrameCliente extends JFrame {
 		
 		vendedor = new JLabel("Vendedor: ");
 		cPane.add(vendedor);
-		cPane.add(new JComboBox<String>(new String[] { "Nenhuma opcao selecionada", " opcao 1" }));
-		System.out.println();
+
+		JComboBox<Vendedor> vendedores = new JComboBox<>();
+		for (Vendedor v : e.getVendedoresCadastrados()) {
+			vendedores.addItem(v);
+		}
+		cPane.add(vendedores);
 		
 
 		cliente = new JLabel("Cliente: ");
 		cPane.add(cliente);
-		cPane.add(new JComboBox<String>(new String[] { "Nenhuma opcao selecionada", " opcao 1" }));
-		System.out.println();
+
+		JComboBox<Cliente> clientes = new JComboBox<>();
+		for (Cliente c : e.getClientesCadastrados()) {
+			clientes.addItem(c);
+		}
+		cPane.add(clientes);
 		
 		produto = new JLabel("Produto: ");
 		cPane.add(produto);
-		cPane.add(new JComboBox<String>(new String[] { "Nenhuma opcao selecionada", " opcao 1" }));
-		System.out.println();
+		JComboBox<Produto> produtos = new JComboBox<>();
+		for (Produto p: e.getProdutosCadastrados()) {
+			produtos.addItem(p);
+		}
+		cPane.add(produtos);
 		
 
 		data = new JLabel("Data: ");
-		campo = new JTextField(15);	
+		campo = new JTextField(15);
 		butOK = new JButton("Agendar");
 		cPane.add(data);
 		cPane.add(campo);	
 		cPane.add(butOK);
 		butOK.addActionListener(new ButOkEvent());
 		this.pack();
+
+		Vendedor vendedorVisita = (Vendedor) vendedores.getSelectedItem();
+		Cliente clienteVisita = (Cliente) clientes.getSelectedItem();
+		Produto produtoVisita = (Produto) produtos.getSelectedItem();
+
+		e.agendarVisita(vendedorVisita, clienteVisita, produtoVisita, campo.getText());
 		
 	}
+
+
 	class ButOkEvent implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {			

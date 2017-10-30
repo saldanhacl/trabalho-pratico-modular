@@ -1,3 +1,5 @@
+package Implementacao;
+
 public class Visita {
 
     private Vendedor vendedorVisitante;

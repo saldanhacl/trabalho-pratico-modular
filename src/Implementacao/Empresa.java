@@ -1,3 +1,5 @@
+package Implementacao;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -39,29 +41,29 @@ public class Empresa {
         Visita v = new Visita(vendedoresCadastrados.get(vendedorID),clientesCadastrados.get(clienteID),
                             produtosCadastrados.get(produtoID),dataVisita + " " + horaVisita);
         vendedoresCadastrados.get(vendedorID).getAgenda().getVisitas().add(v);
-        System.out.println("\nVisita maracada com sucesso!\n");
+        System.out.println("\nImplementacao.Visita maracada com sucesso!\n");
 
     }
 
     public void cadastrarVendedor(Vendedor v){
         if (!vendedoresCadastrados.contains(v)){
             vendedoresCadastrados.add(v);
-            System.out.println("Vendedor " + v + " cadastrado com sucesso!");
-        } else System.out.println("Vendedor já cadastrado");
+            System.out.println("Implementacao.Vendedor " + v + " cadastrado com sucesso!");
+        } else System.out.println("Implementacao.Vendedor já cadastrado");
     }
 
     public void cadastrarCliente(Cliente c){
         if (!clientesCadastrados.contains(c)){
             clientesCadastrados.add(c);
-            System.out.println("Cliente " + c + " cadastrado com sucesso!");
-        } else System.out.println("Cliente já cadastrado");
+            System.out.println("Implementacao.Cliente " + c + " cadastrado com sucesso!");
+        } else System.out.println("Implementacao.Cliente já cadastrado");
     }
 
     public void cadastrarProduto(Produto p){
         if (!produtosCadastrados.contains(p)){
             produtosCadastrados.add(p);
-            System.out.println("Produto " + p + " cadastrado com sucesso!");
-        } else System.out.println("Produto já cadastrado");
+            System.out.println("Implementacao.Produto " + p + " cadastrado com sucesso!");
+        } else System.out.println("Implementacao.Produto já cadastrado");
     }
 
     public void mostrarVendedores(){
@@ -91,7 +93,7 @@ public class Empresa {
         System.out.println("\n------- PRODUTOS --------\n");
         for (Produto p : produtosCadastrados) {
             System.out.println("ID #" + produtosCadastrados.indexOf(p));
-            System.out.println("Produto: " + p.getNomeDoProduto());
+            System.out.println("Implementacao.Produto: " + p.getNomeDoProduto());
             System.out.println("Preço: " + p.getPrecoUnitario());
             System.out.println("Quantidade: " + p.getQuantidadeProduto());
         }

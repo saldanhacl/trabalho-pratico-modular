@@ -1,3 +1,8 @@
+package Main;
+
+import Implementacao.*;
+import GUI.*;
+
 public class Aplicacao {
 
     public static void main(String[] args) {

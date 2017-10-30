@@ -1,3 +1,5 @@
+package Implementacao;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +12,9 @@ public class Agenda {
         for (Visita v : visitas) {
             System.out.println("ID #" + visitas.indexOf(v));
             System.out.println("Data da visita: " + v.getDataDaVisita());
-            System.out.println("Vendedor: " + v.getVendedorVisitante());
-            System.out.println("Cliente: " + v.getClienteVisitado());
-            System.out.println("Produto: " + v.getProdutoVendido());
+            System.out.println("Implementacao.Vendedor: " + v.getVendedorVisitante());
+            System.out.println("Implementacao.Cliente: " + v.getClienteVisitado());
+            System.out.println("Implementacao.Produto: " + v.getProdutoVendido());
         }
     }
 

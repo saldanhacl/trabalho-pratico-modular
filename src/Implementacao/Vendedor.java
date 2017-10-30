@@ -1,25 +1,41 @@
-public class Cliente {
+package Implementacao;
+
+public class Vendedor {
 
     private String nome;
     private String sobrenome;
     private String telefone;
-    private int idade;
+    private String RG;
     private String CPF;
     private String sexo;
+    private Agenda agenda;
 
-    public Cliente(){}
+    public Vendedor(){}
 
-    public Cliente(String nome, String telefone, int idade, String CPF, String sexo, String sobrenome) {
-        setNome(nome);
-        setTelefone(telefone);
+    public Vendedor(String nome, String sobrenome, String telefone, String RG, String CPF, String sexo) {
         setCPF(CPF);
-        setIdade(idade);
-        setSexo(sexo);
+        setNome(nome);
         setSobrenome(sobrenome);
+        setRG(RG);
+        setSexo(sexo);
+        setTelefone(telefone);
+        agenda = new Agenda();
+    }
+
+    public Agenda getAgenda() {
+        return agenda;
+    }
+
+    public void setAgenda(Agenda agenda) {
+        this.agenda = agenda;
     }
 
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSobrenome() {
@@ -30,10 +46,6 @@ public class Cliente {
         this.sobrenome = sobrenome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getTelefone() {
         return telefone;
     }
@@ -42,12 +54,12 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public int getIdade() {
-        return idade;
+    public String getRG() {
+        return RG;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setRG(String RG) {
+        this.RG = RG;
     }
 
     public String getCPF() {
@@ -71,3 +83,4 @@ public class Cliente {
         return nome + " " + sobrenome;
     }
 }
+

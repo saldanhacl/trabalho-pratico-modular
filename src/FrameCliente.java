@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -15,9 +16,12 @@ public class FrameCliente extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JButton butOK;
 	private JTextField campo;
-	private JLabel texto;
-	private JTextField campo2;
-	private JLabel texto2;
+	private JLabel vendedor;
+	private JLabel cliente;
+	private JLabel produto;
+	private JLabel data;
+	public static final String NL = System.getProperty("line.separator");  
+
 
 	public FrameCliente() {
 		super("Agendamento");
@@ -26,17 +30,28 @@ public class FrameCliente extends JFrame {
 		
 		cPane.setLayout(new FlowLayout());
 		
-		texto = new JLabel("Vendedor: ");
-		campo = new JTextField(15);
-		butOK = new JButton("OK");
+		vendedor = new JLabel("Vendedor: ");
+		cPane.add(vendedor);
+		cPane.add(new JComboBox<String>(new String[] { "Nenhuma opcao selecionada", " opcao 1" }));
+		System.out.println();
 		
-		texto2 = new JLabel("Data: ");
-		campo2 = new JTextField(15);
+
+		cliente = new JLabel("Cliente: ");
+		cPane.add(cliente);
+		cPane.add(new JComboBox<String>(new String[] { "Nenhuma opcao selecionada", " opcao 1" }));
+		System.out.println();
 		
-		cPane.add(texto);
+		produto = new JLabel("Produto: ");
+		cPane.add(produto);
+		cPane.add(new JComboBox<String>(new String[] { "Nenhuma opcao selecionada", " opcao 1" }));
+		System.out.println();
+		
+
+		data = new JLabel("Data: ");
+		campo = new JTextField(15);	
+		butOK = new JButton("Agendar");
+		cPane.add(data);
 		cPane.add(campo);	
-		cPane.add(texto2);
-		cPane.add(campo2);
 		cPane.add(butOK);
 		butOK.addActionListener(new ButOkEvent());
 		this.pack();
@@ -45,7 +60,7 @@ public class FrameCliente extends JFrame {
 	class ButOkEvent implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {			
-	    	   JOptionPane.showMessageDialog(null, "Vendedor: " + campo.getText() + "\n" + "Data: " + campo2.getText() , "Agendamento", JOptionPane.PLAIN_MESSAGE);
+	    	   JOptionPane.showMessageDialog(null, "Data: " + campo.getText() , "", JOptionPane.PLAIN_MESSAGE);
 	}
   }
 }

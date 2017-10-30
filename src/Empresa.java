@@ -19,6 +19,11 @@ public class Empresa {
         this.cnpjDaEmpresa = cnpjDaEmpresa;
     }
 
+    public void agendarVisita(Vendedor v, Cliente c, Produto p, String data){
+        Visita visita = new Visita(v,c,p,data);
+        v.getAgenda().getVisitas().add(visita);
+    }
+
     public void agendarVisita(){
         System.out.println("\n------- AGENDAMENTO DE VISITAS --------\n");
         System.out.print("Digite o ID do vendedor: ");

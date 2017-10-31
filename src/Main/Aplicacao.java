@@ -29,6 +29,7 @@ public class Aplicacao {
 
 
             FrameCliente apg = new FrameCliente(pp);
+            apg.setLocationRelativeTo(null);
             apg.setVisible(true);
 
         }catch (ExcecaoVendedorCadastrado e){

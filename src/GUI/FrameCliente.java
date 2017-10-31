@@ -23,7 +23,7 @@ public class FrameCliente extends JFrame {
 	private JLabel cliente;
 	private JLabel produto;
 	private JLabel data;
-	public static final String NL = System.getProperty("line.separator");  
+	public static final String NL = System.getProperty("line.separator");
 
 
 	public FrameCliente(Empresa e) {
@@ -31,7 +31,7 @@ public class FrameCliente extends JFrame {
 		super("Agendamento");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Container cPane = this.getContentPane();
-		
+
 		cPane.setLayout(new FlowLayout());
 		
 		vendedor = new JLabel("Vendedor: ");

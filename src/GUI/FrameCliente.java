@@ -85,7 +85,7 @@ public class FrameCliente extends JFrame {
 	class ButOkEvent implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {			
-	    	   JOptionPane.showMessageDialog(null, "Data: " + campo.getText() , "", JOptionPane.PLAIN_MESSAGE);
+	    	   JOptionPane.showMessageDialog(null, "Data: " + campo.getText() + "\nVendedor: "+ vendedores.getSelectedItem() + "\nCliente: "+ clientes.getSelectedItem()  +"\nProduto: "+ produtos.getSelectedItem() , "", JOptionPane.PLAIN_MESSAGE);
 	}
   }
 }

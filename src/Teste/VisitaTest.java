@@ -1,4 +1,4 @@
-package Testes;
+package Teste;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,7 +17,7 @@ public class VisitaTest {
 	public void testVisita() {
 		Vendedor a = new Vendedor("Lucas","Saldanha", "(31) 98521-2548","16.528.961", "153.698.258-63","Masculino");
 		Cliente b = new Cliente("Hugo","(31) 98521-2548", 30, "153.698.258-63","Masculino","De Paula");
-		Produto c = new Produto("Pão",0.58,200);
+		Produto c = new Produto("Pï¿½o",0.58,200);
 		Visita d = new Visita(a,b,c,"12/12/2017","18:00");
 		assertEquals(a, d.getVendedorVisitante());
 		assertEquals(b, d.getClienteVisitado());

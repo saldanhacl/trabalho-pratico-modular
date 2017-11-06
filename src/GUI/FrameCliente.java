@@ -1,6 +1,10 @@
 package GUI;
 
-import Implementacao.*;
+
+import Implementacao.Cliente;
+import Implementacao.Empresa;
+import Implementacao.Produto;
+import Implementacao.Vendedor;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -26,10 +30,9 @@ public class FrameCliente extends JFrame {
 	private Vendedor vendedorVisita;
 	private Cliente clienteVisita;
 	private Produto produtoVisita;
-	public static final String NL = System.getProperty("line.separator");
 
 
-	public FrameCliente(Empresa e) {
+    public FrameCliente(Empresa e) {
 
 		super("Agendamento");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);

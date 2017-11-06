@@ -1,6 +1,5 @@
 package Implementacao;
 
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Visita {
@@ -10,38 +9,11 @@ public class Visita {
     private Produto produtoVendido;
     private GregorianCalendar dataDaVisita;
 
-    public Visita() {
-    }
-
     public Visita(Vendedor vendedorVisitante, Cliente clienteVisitado, Produto produtoVendido,String data,String hora) {
         this.vendedorVisitante = vendedorVisitante;
         this.clienteVisitado = clienteVisitado;
         this.produtoVendido = produtoVendido;
         this.addData(data,hora);
-    }
-
-    public Vendedor getVendedorVisitante() {
-        return vendedorVisitante;
-    }
-
-    public void setVendedorVisitante(Vendedor vendedorVisitante) {
-        this.vendedorVisitante = vendedorVisitante;
-    }
-
-    public Cliente getClienteVisitado() {
-        return clienteVisitado;
-    }
-
-    public void setClienteVisitado(Cliente clienteVisitado) {
-        this.clienteVisitado = clienteVisitado;
-    }
-
-    public Produto getProdutoVendido() {
-        return produtoVendido;
-    }
-
-    public void setProdutoVendido(Produto produtoVendido) {
-        this.produtoVendido = produtoVendido;
     }
 
     public GregorianCalendar getDataDaVisita() {

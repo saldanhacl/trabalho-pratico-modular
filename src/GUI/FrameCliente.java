@@ -23,6 +23,9 @@ public class FrameCliente extends JFrame {
 	private JLabel cliente;
 	private JLabel produto;
 	private JLabel data;
+	private Vendedor vendedorVisita;
+	private Cliente clienteVisita;
+	private Produto produtoVisita;
 	public static final String NL = System.getProperty("line.separator");
 
 
@@ -62,7 +65,7 @@ public class FrameCliente extends JFrame {
 		cPane.add(produtos);
 		
 
-		data = new JLabel("Data: ");
+		data = new JLabel("Data (dd/mmm/aaaa hh/mm): ");
 		campo = new JTextField(15);
 		butOK = new JButton("Agendar");
 		cPane.add(data);
@@ -71,9 +74,9 @@ public class FrameCliente extends JFrame {
 		butOK.addActionListener(new ButOkEvent());
 		this.pack();
 
-		Vendedor vendedorVisita = (Vendedor) vendedores.getSelectedItem();
-		Cliente clienteVisita = (Cliente) clientes.getSelectedItem();
-		Produto produtoVisita = (Produto) produtos.getSelectedItem();
+		vendedorVisita = (Vendedor) vendedores.getSelectedItem();
+		clienteVisita = (Cliente) clientes.getSelectedItem();
+		produtoVisita = (Produto) produtos.getSelectedItem();
 
 		//Passar a data por 24/04/1999 e criar campo hora e passar como 14:00
 		//Neste estilo - Teste:
@@ -84,8 +87,11 @@ public class FrameCliente extends JFrame {
 
 	class ButOkEvent implements ActionListener {
 		@Override
-		public void actionPerformed(ActionEvent e) {			
-	    	   JOptionPane.showMessageDialog(null, "Data: " + campo.getText() + "\nVendedor: "+ vendedores.getSelectedItem() + "\nCliente: "+ clientes.getSelectedItem()  +"\nProduto: "+ produtos.getSelectedItem() , "", JOptionPane.PLAIN_MESSAGE);
+		public void actionPerformed(ActionEvent e) {
+	    	   JOptionPane.showMessageDialog(null, "Data: " + campo.getText() +
+					   "\nVendedor: "+ vendedorVisita + "\nCliente: "+
+					   clienteVisita  +"\nProduto: "+
+					   produtoVisita , "", JOptionPane.PLAIN_MESSAGE);
 	}
   }
 }
